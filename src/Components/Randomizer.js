@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 
-export default function Randomizer(){
+export default function Randomizer(props){
     const [selection, setSelection] = useState("")
+    const movieList = props.choices
 
     let DUMMY_ARRAY = [
         {name: "movieA"},
@@ -9,14 +10,15 @@ export default function Randomizer(){
         {name: "movieC"},
         {name: "movieD"},
     ]
+    
     function getRandomInt(min,max) {
         min = Math.ceil(min)
         max = Math.floor(max)
         return Math.floor(Math.random() * (max - min) + min )
     }
     function RandomMovieSelection() {
-        console.log(DUMMY_ARRAY[getRandomInt(0,DUMMY_ARRAY.length)].name)
-        setSelection(DUMMY_ARRAY[getRandomInt(0,DUMMY_ARRAY.length)].name)
+        console.log(movieList[getRandomInt(0,movieList.length)])
+        setSelection(movieList[getRandomInt(0,movieList.length)])
     }
 
     return(
@@ -27,7 +29,9 @@ export default function Randomizer(){
             <p>{selection}</p>
         </section>
         </div>
-        )
+    )
+
+    
 }
 
 

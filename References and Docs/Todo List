@@ -1,0 +1,5 @@
+Todo: 
+
+    -fill the database with a list of ideas
+            - add a function that addresses any duplicates
+                -checks if names are the same then other props
