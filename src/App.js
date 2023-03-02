@@ -1,28 +1,21 @@
-import React, {useState,useEffect} from "react"
+import React, {useState} from "react"
 // import logo from './logo.svg';
 import './App.css';
-// import DateNightIdeas from './Components/DateNightIdeas';
-// import MovieList from "./Components/MovieList";
+import MovieList from "./Components/MovieList";
+import AddToList from './Components/AddToList';
 import Randomizer from './Components/Randomizer';
-  
+import RemoveListItems from "./Components/RemoveListItems";  
 
 
 function App() {
   let fromStorage = window.localStorage.getItem("movies")
   let parsedData = JSON.parse(fromStorage)
   
-  const [showList, setShowlist] = useState(false)
+  const [showList, setShowList] = useState(false)
   const [listItems, setListItems] = useState(setArraystate())
   const [newItems, setNewItems] =useState("")
   const [removeItems, setRemoveItems] =useState("")
  
-
-  let localstore = localStorage.getItem("Movies")
-
-
-  function setMovieNameHandler(e){
-      
-  }
 
   function setArraystate() {
     
@@ -33,14 +26,14 @@ function App() {
     }
   }
 
-  function removeItemsHandler(e) {
-    e.preventDefault()
-    if (listItems.indexOf(removeItems) !== -1 ){
-    listItems.splice(listItems.indexOf(removeItems),1)
-    window.localStorage.setItem("movies",JSON.stringify(listItems))
-    }
-    setRemoveItems("")
-  }
+  // function removeItemsHandler(e) {
+  //   e.preventDefault()
+  //   if (listItems.indexOf(removeItems) !== -1 ){
+  //   listItems.splice(listItems.indexOf(removeItems),1)
+  //   window.localStorage.setItem("movies",JSON.stringify(listItems))
+  //   }
+  //   setRemoveItems("")
+  // }
  
   function setNewItemsHandler(e){
     
@@ -48,11 +41,11 @@ function App() {
     console.log(newItems)
   }
 
-  function setRemoveItemsHandler(e){
+  // function setRemoveItemsHandler(e){
     
-    setRemoveItems(e.target.value)
-    console.log(removeItems)
-  }
+  //   setRemoveItems(e.target.value)
+  //   console.log(removeItems)
+  // }
 
   function addListItems(e) {
     e.preventDefault()
@@ -74,30 +67,33 @@ function App() {
 
   }
 
-  function showListHandler() {
-    if (showList === false) {return setShowlist(true)}
-    else {return setShowlist(false)}
-  }
+  // function showListHandler() {
+  //   if (showList === false) {return setShowlist(true)}
+  //   else {return setShowlist(false)}
+  // }
  
   return (
     <div className="App">
-      <form onSubmit={addListItems}>
-        <input type="text" name="name" value={newItems} onChange={setNewItemsHandler}></input>
-        <input type="submit" value="Submit"></input>
-      </form>
+      <AddToList 
+        listItems={listItems}
+        setListItems={setListItems}
+        newItems={newItems}
+        setNewItems={setNewItems}
+      />
       <button onClick={logListItems}>Log List</button>
-      <Randomizer choices={listItems}/>
-      <form onSubmit={removeItemsHandler}>
-        <input type="text" value={removeItems} onChange={setRemoveItemsHandler}></input>
-        <input type="submit" value="Remove Items"></input>
-      </form>
-      <div>
-        <button onClick={showListHandler}>Show Movie List</button>
-        {showList && listItems.map((items) => (
-          <p>{items}</p>
-          ))
-        }
-      </div>
+      <Randomizer 
+        choices={listItems}
+      />
+      <RemoveListItems 
+        list={listItems} 
+        removeItems={removeItems} 
+        setRemoveItems={setRemoveItems} 
+      />
+      <MovieList 
+        list={listItems} 
+        showList={showList} 
+        setShowList={setShowList} 
+      />
     </div>
   );
 }

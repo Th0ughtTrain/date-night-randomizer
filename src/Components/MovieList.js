@@ -2,20 +2,20 @@ import React from 'react'
 
 
 export default function MovieList(props) {
+    
 
-    function movieListDiagnostics() {
-        console.log(localStorage)
-        console.log(props.choices)
-    }
+    function showListHandler() {
+        if (props.showList === false) {return props.setShowList(true)}
+        else {return props.setShowList(false)}
+      }
 
     return(
         <div>
-            <ul>
-            {/* {props.choices.map((movies) => (
-                <p>{movies.movie}</p>
-            ))} */}
-            </ul>
-            <button onClick={movieListDiagnostics}>ClickMe</button>
-        </div>
+        <button onClick={showListHandler}>Show Movie List</button>
+        {props.showList && props.list.map((items) => (
+          <p key={Math.random()} >{items}</p>
+          ))
+        }
+      </div>
     )
 }
