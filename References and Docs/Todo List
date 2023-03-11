@@ -1,5 +1,13 @@
 Todo: 
+    
+    - Make the user interface much cleaner and thematic
+    - Make a bigger list of ideas and potentially filters
+    
 
+Done:
     -fill the database with a list of ideas
             - add a function that addresses any duplicates
                 -checks if names are the same then other props
+    -Add delete functionality to the IdeaList
+    -Add filters
+    -Add default ideas
