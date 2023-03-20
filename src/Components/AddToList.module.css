@@ -1,0 +1,28 @@
+ .addList-wrapper{
+    height: 150px;
+    width: 400px;
+    background: #2b6caf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 2%;
+}
+
+.p {
+    margin: auto;
+    color: white;
+}
+
+.add-list-form {
+    height: 40px;
+}
+
+.add-list-form-text {
+    height: 20px;
+    width: 200px;
+}
+
+.add-list-form-submit{
+    height: 25px;
+    background-color:#f05b5b;
+}

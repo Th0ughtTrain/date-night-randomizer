@@ -1,5 +1,5 @@
     import React, {useState} from 'react'
-    import './AddToList.css'
+    import styles from './AddToList.module.css'
 
     export default function AddtoList(props) {
 
@@ -23,10 +23,25 @@
           }
 
         return (
-            <div className='addList-wrapper'>    
-                <form onSubmit={addListItems}>
-                    <input type="text" name="name" value={props.newItems} onChange={setNewItemsHandler}></input>
-                    <input type="submit" value="Submit"></input>
+            <div className={styles['addList-wrapper']}>
+                <div>
+                    <p className={styles.p}>Feel Free to Add your Own Ideas!</p>    
+                </div>
+                <form 
+                onSubmit={addListItems} 
+                className={styles[`add-list-form`]}>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        value={props.newItems} 
+                        onChange={setNewItemsHandler}
+                        className={styles[`add-list-form-text`]}
+                        />
+                    <input 
+                    type="submit" 
+                    value="Submit"
+                    className={styles[`add-list-form-submit`]}>
+                    </input>
                 </form>
             </div>
         )

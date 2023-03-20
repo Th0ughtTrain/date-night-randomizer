@@ -5,6 +5,7 @@ import IdeaList from "./Components/IdeaList";
 import AddToList from './Components/AddToList';
 import Randomizer from './Components/Randomizer';
 import RemoveListItems from "./Components/RemoveListItems";  
+import Title from "./Components/Title";
 
 
 function App() {
@@ -99,22 +100,23 @@ function App() {
   return (
     <div className="App">
       <div className="functionality-wrapper">
+        <Title />
+        <Randomizer 
+          defaultChoices={defaultDateList}
+          choices={listItems}
+        />
         <AddToList 
           listItems={listItems}
           setListItems={setListItems}
           newItems={newItems}
           setNewItems={setNewItems}
         />
-        <button onClick={logListItems}>Log List</button>
-        <Randomizer 
-          defaultChoices={defaultDateList}
-          choices={listItems}
-        />
-        <RemoveListItems 
-          list={listItems} 
-          removeItems={removeItems} 
-          setRemoveItems={setRemoveItems} 
-      />
+        {/* <RemoveListItems 
+        list={listItems} 
+        removeItems={removeItems} 
+        setRemoveItems={setRemoveItems} 
+    /> */}
+        {/* <button onClick={logListItems}>Log List</button> */}
       </div>
       <div className="idea-list-wrapper">
         <IdeaList 
