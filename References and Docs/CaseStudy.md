@@ -6,7 +6,7 @@
   - [Introduction](#introduction)
   - [Development](#development)
   - [Outcome](#outcome)
-- [Built with:](#built-with)
+  - [Built with](#built-with)
 
 ## Introduction
 
@@ -21,7 +21,7 @@ This app was actually one of my first expirementations with react. So as I was l
 
  I believe flexibility of an application is important to a user experience and I've achieved that here. The app retrieves data from a pre-determined list as well as being able to use user inputted items that it stores in local storage. This is a starting point for further customization options down the line that ensures that users can have options that are reflective of their preferences and needs. 
 
- # Built with: 
+ ## Built with
     - HTML           
     - CSS           
     - Javascript
