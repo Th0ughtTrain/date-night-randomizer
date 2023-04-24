@@ -20,7 +20,6 @@ export default function Randomizer(props){
        return items
     })  
 
-    
     combinedList.map((items) => {
         return combinedListCustom.push(items)
     })
@@ -143,7 +142,7 @@ export default function Randomizer(props){
     },[]) 
 
     return(
-        <div>
+        <div className={styles.randomizer}>
             <ListFilter 
                 noCustomFilter={excludeCustomList}
                 customFilter={useCustomList}
@@ -151,8 +150,9 @@ export default function Randomizer(props){
                 selection={selection}
                 updateSelection={setSelection}
                 combinedList={combinedList}
+                toggleCustom={toggleCustom}
                />
-            <button onClick={ () => {console.log(selection); console.log(toggleCustom)}}>Log Filters</button>
+            {/* <button onClick={ () => {console.log(selection); console.log(toggleCustom)}}>Log Filters</button> */}
             <button className={styles[`randomize`]} onClick ={randomSelection}>Randomize</button>
             <section className={styles.results}>
                 <p>Today's Date Night Idea is</p>

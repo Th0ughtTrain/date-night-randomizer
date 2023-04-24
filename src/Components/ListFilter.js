@@ -16,9 +16,17 @@ export default function ListFilter(props){
         console.log(e.target)
     }
 
+    function renderUserListConfirmation() {
+        if (props.toggleCustom === true) {
+        return <p className={styles[`enable-user-list`]}>User List Enabled!</p>
+        } else {
+            return
+        }
+      }
+
 
    return (
-        <div>
+        <div className={styles[`filter-wrapper`]}>
             <form 
             className={styles[`filter-form`]}
             >
@@ -28,14 +36,17 @@ export default function ListFilter(props){
                     name="list-categories" 
                     value="Staying At Home" 
                     onFocus={setListFocus}
-                />
+                    className={styles[`filter-input`]}
+                    />
                 <label htmlFor="staying in" >Stay At Home</label>
                 <input 
                     type="radio" 
                     id="going out" 
                     value="Going Out" 
                     name="list-categories"
-                    onFocus={setListFocus}/>
+                    onFocus={setListFocus}
+                    className={styles[`filter-input`]}
+                    />
                 <label htmlFor="going out">Going Out</label>
                 <input
                     type="radio" 
@@ -45,10 +56,13 @@ export default function ListFilter(props){
                     onFocus={setListFocus}
                     ref={myRef}
                     onChange={focusHandler}
+                    className={styles[`filter-input`]}
                 />
                 <label htmlFor="both">Both</label>
             </form>
-            <form >
+            <form 
+                className={styles[`filter-form`]}
+            >
                 <input
                 type="radio"
                 id="exclude custom"
@@ -56,8 +70,9 @@ export default function ListFilter(props){
                 value="exclude"
                 onFocus={noCustomList}
                 onChange={noCustomList}
+                className={styles[`filter-input`]}
                 ></input>
-                <label htmlFor='exclude custom'>Exclude Custom List</label>
+                <label htmlFor='exclude custom'>Exclude User List</label>
                 <input
                 type='radio'
                 id="add custom"
@@ -65,13 +80,11 @@ export default function ListFilter(props){
                 value="add"
                 onFocus={useCustomList}
                 onChange={useCustomList}
+                className={styles[`filter-input`]}
                 ></input>
-                <label htmlFor="add custom">Add Custom List</label>
-                <input 
-                    type="submit"
-
-                ></input>
+                <label htmlFor="add custom">Add User List</label>
             </form>
+            {renderUserListConfirmation()}
     </div>
     )
 }

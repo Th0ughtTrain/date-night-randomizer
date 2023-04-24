@@ -16,7 +16,7 @@ export default function IdeaList(props) {
 
 
     return(
-        <div className={styles.container}>
+        <div className={props.showList ? `${styles.container}` : ``}>
           <button onClick={showListHandler}>My List</button>
           {props.showList && props.list.map((items) => (
             <div className={styles['list-item-wrapper']} key={Math.random()}>

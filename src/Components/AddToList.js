@@ -25,7 +25,8 @@
         return (
             <div className={styles['addList-wrapper']}>
                 <div>
-                    <p className={styles.p}>Feel Free to Add your Own Ideas!</p>    
+                    <h3 className={styles.p}>Feel Free to Add your Own Ideas!</h3>
+                    <p className={styles.p}>the idea pool will automatically be updated</p>    
                 </div>
                 <form 
                 onSubmit={addListItems} 
@@ -36,11 +37,12 @@
                         value={props.newItems} 
                         onChange={setNewItemsHandler}
                         className={styles[`add-list-form-text`]}
-                        />
+                    />
                     <input 
                     type="submit" 
                     value="Submit"
-                    className={styles[`add-list-form-submit`]}>
+                    className={styles[`add-list-form-submit`]}
+                    >
                     </input>
                 </form>
             </div>

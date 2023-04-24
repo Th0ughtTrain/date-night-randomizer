@@ -4,7 +4,7 @@ import './App.css';
 import IdeaList from "./Components/IdeaList";
 import AddToList from './Components/AddToList';
 import Randomizer from './Components/Randomizer';
-import RemoveListItems from "./Components/RemoveListItems";  
+// import RemoveListItems from "./Components/RemoveListItems";  
 import Title from "./Components/Title";
 
 
@@ -25,14 +25,21 @@ function App() {
       "Fun DIY Project",
       'Fun Crafts Project',
       'Fitness Together',
-      "Work on A Puzzle Together",
-      'Plan A Vaction Together',
+      "Work on a Puzzle Together",
+      'Plan a Vaction Together',
       "Listen To Music Together`",
+      "Couple Book Club",
+      "At Home Exercise Together",
+      "Cook a New Recipe Together",
+      "Plant a Garden",
+      "Learn Something New Together",
+      "Have a Meditation Session", 
+      "Bingewatch a TV Show"
     ]},
     {generaloutside: [
       "Movie at Theater and Dinner",
       "Dinner at Restaurant",
-      "Dinner At A New Restaurant",
+      "Dinner At  New Restaurant",
       "Pub Crawl",
       "Checkout A New Town Together",
       "Go to an Arcade Together",
@@ -49,13 +56,15 @@ function App() {
       "Go To An Escape Room Together",
       "Go Biking Together",
       "Take a Class Together",
+      "Find a discounted activity to do",
+
     ]}
   ]
 
   const [showList, setShowList] = useState(false)
   const [listItems, setListItems] = useState(setArraystate())
   const [newItems, setNewItems] =useState("")
-  const [removeItems, setRemoveItems] =useState("")
+  // const [removeItems, setRemoveItems] =useState("")
  
 
   function setArraystate() {
@@ -66,36 +75,6 @@ function App() {
       return parsedData
     }
   }
-
-  // function removeItemsHandler(e) {
-  //   e.preventDefault()
-  //   if (listItems.indexOf(removeItems) !== -1 ){
-  //   listItems.splice(listItems.indexOf(removeItems),1)
-  //   window.localStorage.setItem("movies",JSON.stringify(listItems))
-  //   }
-  //   setRemoveItems("")
-  // }
- 
-  function setNewItemsHandler(e){
-    
-    setNewItems(e.target.value)
-    console.log(newItems)
-  }
-
-  // function setRemoveItemsHandler(e){
-    
-  //   setRemoveItems(e.target.value)
-  //   console.log(removeItems)
-  // }
-
-
-
-  function logListItems(){
-    console.log(listItems)
-    console.log(newItems)
-    console.log(fromStorage = window.localStorage.getItem("movies"))
-  }
-
 
   return (
     <div className="App">
@@ -111,19 +90,13 @@ function App() {
           newItems={newItems}
           setNewItems={setNewItems}
         />
-        {/* <RemoveListItems 
-        list={listItems} 
-        removeItems={removeItems} 
-        setRemoveItems={setRemoveItems} 
-    /> */}
-        {/* <button onClick={logListItems}>Log List</button> */}
-      </div>
-      <div className="idea-list-wrapper">
-        <IdeaList 
-          list={listItems} 
-          showList={showList} 
-          setShowList={setShowList} 
-        />
+        <div className="idea-list-wrapper">
+                <IdeaList 
+                  list={listItems} 
+                  showList={showList} 
+                  setShowList={setShowList} 
+                />
+        </div>
       </div>
     </div>
   );

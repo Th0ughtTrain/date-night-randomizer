@@ -3,13 +3,15 @@ Todo:
     - Make the user interface much cleaner and thematic
     - Make a bigger list of ideas and potentially filters
     - Change the font
-    - Add custom enabled identifier
+    
     
 
 Done:
-    -fill the database with a list of ideas
+    - fill the database with a list of ideas
             - add a function that addresses any duplicates
                 -checks if names are the same then other props
-    -Add delete functionality to the IdeaList
-    -Add filters
-    -Add default ideas
+    - Add delete functionality to the IdeaList
+    - Add filters
+    - Add default ideas
+    - Remove background from My List when it is collapsed
+    - Add custom enabled identifier
