@@ -15,11 +15,11 @@ The idea for this app came one fateful evening when my girlfriend and I could no
 
 ## Development
 
-This app was actually one of my first expirementations with react. So as I was learning I was adding features. The central problem of this app was to get inputted data and store and retrieve it in and from state and local storage. I had to draw a diagram to show how the information flowed so I could understand exactly how I should code it and it took a few rewrites to get it to a point where data flowed correctly. 
+This app was actually one of my first experimentations with react. So as I was learning I was adding features. The central problem of this app was to get inputted data and store and retrieve it in and from state and local storage. I started developing this web app well before I learned redux, and I had to draw a diagram to show how the information flowed so I could understand exactly how I should code it and it took a few rewrites to get it to a point where data flowed correctly. 
 
 ## Outcome
 
- I believe flexibility of an application is important to a user experience and I've achieved that here. The app retrieves data from a pre-determined list as well as being able to use user inputted items that it stores in local storage. This is a starting point for further customization options down the line that ensures that users can have options that are reflective of their preferences and needs. 
+ I believe flexibility of an application is important to a user experience which was in consideration throughout the development. The app retrieves data from a pre-determined list as well as being able to use user inputted items that it stores in local storage. This is a starting point for further customization options down the line that ensures that users can have options that are reflective of their preferences and needs. 
 
  ## Built with
     - HTML           
