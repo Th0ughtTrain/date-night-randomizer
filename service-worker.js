@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/date-night-randomizer/precache-manifest.ea1e0bdebea23b095bfef2b2383af20d.js"
+  "/date-night-randomizer/precache-manifest.0b5bb8256431dc7ae78b8eaed4e4cbc6.js"
 );
 
 workbox.clientsClaim();
